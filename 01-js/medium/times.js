@@ -8,6 +8,23 @@ Hint - use Date class exposed in JS
 There is no automated test for this one, this is more for you to understand time goes up as computation goes up
 */
 
-function calculateTime(n) {
-    return 0.01;
+
+function calculateTheTime(start) {
+    const end = Date.now();
+    console.log("Timer finished....")
+    const millis = end - start;
+    return Math.floor(millis / 1000);
 }
+
+function calculateTime(n) {
+    const start = Date.now()
+    let count = 0;
+    for (let i = 0; i <= n; i++) {
+        count += i;
+    }
+
+    return setTimeout(calculateTheTime, 5000, start)
+}
+
+console.log(calculateTheTime(100))
+
